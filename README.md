@@ -1,4 +1,4 @@
-# app-basis
+# Please see README under subfolder
 
-# Automate it all
-Configure spring profile on AWS for environment
+
+
