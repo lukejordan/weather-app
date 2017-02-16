@@ -26,7 +26,7 @@ public class WeatherController {
     private WeatherService weatherService;
 
     @RequestMapping(value = "/weather2/{location}", method = RequestMethod.GET)
-    public @ResponseBody ResponseEntity testRetrieveFromDb(
+    public @ResponseBody ResponseEntity getWeatherRest(
             @PathVariable("location") final String location, ModelMap model) {
 
         LOGGER.info("In test service");
@@ -54,7 +54,7 @@ public class WeatherController {
     }
 
     @RequestMapping(value = "/persist", method = RequestMethod.POST)
-    public ResponseEntity testPersist() {
+    public ResponseEntity submitWeather() {
 
         LOGGER.info("test submitted");
 
