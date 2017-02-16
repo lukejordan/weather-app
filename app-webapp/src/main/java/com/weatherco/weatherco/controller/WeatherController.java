@@ -15,59 +15,58 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.weatherco.weatherco.service.WeatherService;
 
-
 @RestController
 public class WeatherController {
 
-	private static Logger LOGGER = Logger.getLogger(WeatherController.class.getName());
-	
-	@Autowired
-	private WeatherService weatherService;
-    
+    private static Logger LOGGER = Logger.getLogger(WeatherController.class
+            .getName());
+
+    @Autowired
+    private WeatherService weatherService;
+
     @RequestMapping(value = "/weather2/{location}", method = RequestMethod.GET)
-    public @ResponseBody ResponseEntity testRetrieveFromDb(@PathVariable("location") final String location, ModelMap model) {
-       
-       LOGGER.info("In test service");
-       
-       String response = "default response";
-       
+    public @ResponseBody ResponseEntity testRetrieveFromDb(
+            @PathVariable("location") final String location, ModelMap model) {
 
+        LOGGER.info("In test service");
 
-       if (weatherService != null) {
-           response = weatherService.retrieveWeather(location);
-           
-       }
-       else {
-           LOGGER.info("Customer repo is null");
-       }
+        String response = "default response";
 
-       URI location2 = URI.create("http://localhost/moo");
-          
-       HttpHeaders responseHeaders = new HttpHeaders();
-       responseHeaders.setLocation(location2);
-       responseHeaders.set("MyResponseHeader", "MyValue");
-       
-       ResponseEntity<String> responseObj = new ResponseEntity<String>(response, responseHeaders, HttpStatus.OK);
-       
-       return responseObj;
+        if (weatherService != null) {
+            response = weatherService.retrieveWeather(location);
+
+        }
+        else {
+            LOGGER.info("Customer repo is null");
+        }
+
+        URI location2 = URI.create("http://localhost/moo");
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setLocation(location2);
+        responseHeaders.set("MyResponseHeader", "MyValue");
+
+        ResponseEntity<String> responseObj = new ResponseEntity<String>(
+                response, responseHeaders, HttpStatus.OK);
+
+        return responseObj;
     }
-   
-      @RequestMapping(value = "/persist", method = RequestMethod.POST)
-       public ResponseEntity testPersist() {
-          
-          LOGGER.info("test submitted");
-          
-          if (weatherService != null) {
-              
-          }
-          else {
-              LOGGER.info("Customer repo is null");
-          }
 
-          ResponseEntity response = new ResponseEntity(null, HttpStatus.OK);
-          
-          return response;
-       }
+    @RequestMapping(value = "/persist", method = RequestMethod.POST)
+    public ResponseEntity testPersist() {
 
+        LOGGER.info("test submitted");
+
+        if (weatherService != null) {
+
+        }
+        else {
+            LOGGER.info("Customer repo is null");
+        }
+
+        ResponseEntity response = new ResponseEntity(null, HttpStatus.OK);
+
+        return response;
+    }
 
 }

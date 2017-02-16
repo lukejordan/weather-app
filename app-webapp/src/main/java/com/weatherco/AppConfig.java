@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
 
     private String apiKey;
-    
+
     private String apiUrl;
 
     public String getApiKey() {
