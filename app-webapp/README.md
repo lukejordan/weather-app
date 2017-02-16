@@ -14,13 +14,13 @@ On a mac:
 
 ./run.sh
 
-which has just combined the build and deploy steps without having to worry about changing version number:
+which has just combined the build and run steps without having to worry about changing version number:
 
 mvn clean package
 
 java -jar target/weather-app-0.0.1-SNAPSHOT.jar
 
-On windows, it possibly might be (have no way to test):
+On windows, it will likely be (I have no way to verify this though):
 
 mvn clean package
 
@@ -38,17 +38,17 @@ or
 
 http://localhost:8080/index
 
---- Known Bugs ---
+Enter location, and search for the results.
 
-None that I am aware of.
+--- To do ---
 
---- Improvements ---
-
-Too many to count :). Unfortunately time was short. Can always improve on an application.
+Unfortunately time was short. Can always improve on an application.
 
 Could do with error handling. Throw exception on missing or invalid location.
 
-Sunrise and Sunset times displayed as GMT, for any international service, you'd probably want to display time format in the timezone of the location. For now, times are displayed with date in GMT so illogical display of sunset before sunrise, when displaying only time for Hong Kong isn't visible.
+Logging is insufficient and incorrectly set up.
+
+Sunrise and Sunset times displayed as GMT. Specification requested times only, but this is unintuitive when searching for a location such as Hong Kong, where sunrise time is after sunset. Ideally to support this requirement, you'd likely want to display time format in the timezone of the location using that locale. For now, times are displayed with date in GMT as it is the most intuitive output.
 
 API Key is a secret and should not be stored in config/code but passed into app as secret and not visible in build logs etc, could be stored encrypted and decrypt by passing into app decryption password...
 
