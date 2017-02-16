@@ -1,4 +1,4 @@
-package com.weatherco.weatherco.utils;
+package com.weatherco.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

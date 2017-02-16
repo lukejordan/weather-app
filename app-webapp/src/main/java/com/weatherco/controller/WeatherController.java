@@ -1,4 +1,4 @@
-package com.weatherco.weatherco.controller;
+package com.weatherco.controller;
 
 import java.net.URI;
 
@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.weatherco.weatherco.service.WeatherService;
+
+import com.weatherco.service.WeatherService;
 
 @RestController
 public class WeatherController {
