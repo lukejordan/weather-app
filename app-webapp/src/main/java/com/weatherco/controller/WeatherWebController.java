@@ -22,7 +22,7 @@ public class WeatherWebController {
     private WeatherService weatherService;
 
     @RequestMapping(value = "/weather/{location}", method = RequestMethod.GET)
-    public String testRetrieveFromDb(
+    public String retrieveWeather(
             @PathVariable("location") final String location, ModelMap model) {
 
         LOGGER.info("In test service");
@@ -39,13 +39,14 @@ public class WeatherWebController {
     }
 
     @RequestMapping(value = "/weather", method = RequestMethod.POST)
-    public String testPersist(@RequestBody String locationParam, ModelMap model) {
+    public String weatherSearch(@RequestBody String locationParam, ModelMap model) {
         // public String testPersist(@ModelAttribute String location, ModelMap
         // model) {
-
-        LOGGER.info("In test service, location:" + locationParam);
+        LOGGER.debug("Weather search for location:" + locationParam);
+        
         String location = locationParam.replace("location=", "").replace("+",
                 " ");
+        
         Weather weather = null;
         if (weatherService != null) {
             try {
@@ -53,12 +54,13 @@ public class WeatherWebController {
                 model.put("weather", weather);
             } catch (Exception ex) {
                 // Shouldn't do such general catches where time allows
+                // Could be connection issue etc. Should make more specific
                 LOGGER.info("No data found");
             }
 
         }
         else {
-            LOGGER.error("Should ideally throw exception here. 404, not found.");
+            LOGGER.error("Service has not been found. This should not happen.");
         }
 
         if (weather != null) {
