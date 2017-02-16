@@ -72,7 +72,7 @@ public class WeatherWebController {
     }
 
     @RequestMapping(value = "/weather", method = RequestMethod.GET)
-    public String testPersist() {
+    public String weatherGetController() {
         LOGGER.info("In weather default get controller:");
         return "index";
     }
