@@ -17,11 +17,13 @@ On a mac:
 which has just combined the build and deploy steps without having to worry about changing version number:
 
 mvn clean package
+
 java -jar target/weather-app-0.0.1-SNAPSHOT.jar
 
 On windows, it possibly might be (have no way to test):
 
 mvn clean package
+
 java -jar target\weather-app-0.0.1-SNAPSHOT.jar
 
 ** Nb. Please verify file name in target folder
