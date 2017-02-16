@@ -29,14 +29,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/error").setViewName("dynamic-error.jsp");
         registry.addViewController("/dynamic-error").setViewName(
                 "dynamic-error");
-        // registry.addViewController("/error9").setViewName("login-fail2");
-        // registry.addViewController("/error8").setViewName(
-        // "WEB-INF/jsp/search-results-page.jsp");
         registry.addViewController("/index").setViewName(
                 "WEB-INF/jsp/index.jsp");
         registry.addViewController("/search-results").setViewName(
                 "WEB-INF/jsp/search-results-page.jsp");
-
+        registry.addViewController("/empty-results").setViewName(
+                "WEB-INF/jsp/no-search-results.jsp");
     }
 
     @Bean

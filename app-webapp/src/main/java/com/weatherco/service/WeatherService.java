@@ -1,6 +1,6 @@
-package com.weatherco.weatherco.service;
+package com.weatherco.service;
 
-import com.weatherco.weatherco.domain.Weather;
+import com.weatherco.domain.Weather;
 
 public interface WeatherService {
 

@@ -1,6 +1,6 @@
-package com.weatherco.weatherco.domain;
+package com.weatherco.domain;
 
-import com.weatherco.weatherco.utils.Utils;
+import com.weatherco.utils.Utils;
 
 public class Weather {
 

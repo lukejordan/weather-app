@@ -1,4 +1,4 @@
-package com.weatherco.weatherco.service.impl;
+package com.weatherco.service.impl;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.weatherco.AppConfig;
-import com.weatherco.weatherco.domain.Weather;
-import com.weatherco.weatherco.service.WeatherService;
+import com.weatherco.domain.Weather;
+import com.weatherco.service.WeatherService;
 
 @Service
 public class WeatherServiceImpl implements WeatherService {
@@ -28,7 +28,7 @@ public class WeatherServiceImpl implements WeatherService {
 
         System.out.println("url:" + appConfig.getApiUrl());
 
-        String locationToSearch = "london";
+        String locationToSearch = "";
         if (location != null && location.length() > 0) {
             System.out.println("Location to search for: " + location);
             locationToSearch = location;

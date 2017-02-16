@@ -44,12 +44,12 @@ Enter location, and search for the results.
 
 Unfortunately time was short. Can always improve on an application.
 
-Could do with error handling. Throw exception on missing or invalid location.
-
 Logging is insufficient and incorrectly set up.
 
 Sunrise and Sunset times displayed as GMT. Specification requested times only, but this is unintuitive when searching for a location such as Hong Kong, where sunrise time is after sunset. Ideally to support this requirement, you'd likely want to display time format in the timezone of the location using that locale. For now, times are displayed with date in GMT as it is the most intuitive output.
 
 API Key is a secret and should not be stored in config/code but passed into app as secret and not visible in build logs etc, could be stored encrypted and decrypt by passing into app decryption password...
+
+Improved error handling
 
 Incorrect way to retrieve location from form. Spring has a better way. Temporary tactical fix used.
